@@ -10,6 +10,7 @@
 과제에 대한 설명을 드리겠습니다.
 
 1. Up Down 게임 만들기!
+
    파일명 : up_down_game.py
    프로그램 : python
    실행 방법 : 터미널 창 python up_down_game.py 입력 또는 파이썬 실행하기
@@ -46,6 +47,7 @@
 
 
 2. 가위 바위 보 게임 만들기!
+
    파일명 : rock_scissors_paper.py
    프로그램 : python
    실행 방법 : 터미널 창 python rock_scissors_paper.py 입력 또는 파이썬 실행하기
@@ -115,6 +117,7 @@
 
    
 3. (심화 과제) 클래스 사용해보기!
+
    파일명 : member_post.py
    프로그램 : python
    실행 방법 : 터미널 창 python member_post.py 입력 또는 파이썬 실행하기
@@ -188,7 +191,8 @@
   이렇게 클래스를 이용해서 게시글와 내용을 표기 해주는 것을 만들어 보았습니다.
 
   
- 4. (심화 과제) 가위 바위 보 게임 웹으로 만들기! 
+4. (심화 과제) 가위 바위 보 게임 웹으로 만들기!
+
    파일명 : app.py
    프로그램 : python, html
    실행 방법 : 터미널 창 python app.py 입력 또는 파이썬 실행하기

@@ -1,4 +1,5 @@
-![image](https://github.com/billyhyunjun/assignment/assets/157565164/a1d08256-03a4-40c3-b664-c6b07d9c4a89)🙌안녕하세요🙌 이번 개인 과제를 만들어 본 박현준입니다.
+![image](https://github.com/billyhyunjun/assignment/assets/157565164/a1d08256-03a4-40c3-b664-c6b07d9c4a89)
+🙌안녕하세요🙌 이번 개인 과제를 만들어 본 박현준입니다.
 
 ⭐과제의 순서를 알려드리면⭐
 1. Up Down 게임 만들기!
@@ -198,6 +199,8 @@
       실행 방법 : 터미널 창 python app.py 입력 또는 파이썬 실행하기
    
      이번 과제의 심화 내용으로 html과 Flask를 이용 웹으로 구동이 되는 게임을 만들어 보았습니다.
+
+      ![image](https://github.com/billyhyunjun/assignment/assets/157565164/a1d08256-03a4-40c3-b664-c6b07d9c4a89)
    
    
      실제로 이 글을 읽는 분들도 체험이 가능하도록 pythonanywhere라는 가상 환경을 구성해주는 사이트의 도움으로 파이썬을 구동 할 수 있습니다.

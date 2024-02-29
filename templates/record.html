@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>기록 계시판</title>
+    <!-- 부트스트랩 가져오는 주소 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <style>
+        /* 구글 폰트 */
+        @import url('https://fonts.googleapis.com/css2?family=Song+Myung&display=swap');
+
+        * {
+            font-family: "Song Myung", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        #winner {
+            height: 100px;
+            width: 100px;
+        }
+
+        .btn1 {
+            border: none;
+            background-color: transparent;
+        }
+
+        /* 버튼 위치 */
+        #btn_position {
+            margin-top: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .card {
+            margin: 20px 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 네브바 -->
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ url_for('home')}}">메인으로</a>
+        </li>
+    </ul>
+
+    <!-- 배경음악 버튼 생성 -->
+    <div id="btn_position">
+        <h1>!!당신의 순위를 확인하여 주세요!!</h1>
+        <button class="btn1">
+            <img id="winner" src="{{ url_for('static', filename='photo/winner.jfif') }}">
+        </button>
+        <p>🙌눌러주세요🙌</p>
+        <script src="index.js"></script>
+    </div>
+
+    <div class="card">
+        <div class="card-header" style="text-align: center;">
+            ⭐⭐⭐⭐⭐⭐⭐⭐순위표⭐⭐⭐⭐⭐⭐⭐⭐
+        </div>
+        <ul class="list-group list-group-flush">
+            {% for data in data %}
+            <li class="list-group-item" style="letter-spacing: 5px"> 아이디 : {{data.0}} | 승률 : {{data.5}} | {{data.1}} 전 | {{data.2}} 승  | {{data.3}} 패 | {{data.4}} 무 </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <!-- 부트스트랩 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+<script>
+    // btn1을 눌렀을 때 sound1.mp3 재생
+    document.querySelector(".btn1").addEventListener("click", function () {
+        var audio1 = new Audio("{{ url_for('static', filename='music/record.mp3') }}");
+        audio1.loop = true; // 반복재생
+        audio1.volume = 0.5; // 음량 설정
+        audio1.play(); // sound1.mp3 재생
+    })
+</script>

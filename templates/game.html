@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>결전 가위 바위 보</title>
+    <!-- 부트스트랩 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        /* 구글 폰트 */
+        @import url('https://fonts.googleapis.com/css2?family=Song+Myung&display=swap');
+
+        * {
+            font-family: "Song Myung", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        /* 결과표 이름띄우기 */
+        .title {
+            height: 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 300px;
+        }
+
+        /* 손 넣는 곳 이미지 */
+        .image_area {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 300px;
+        }
+
+        /* 버튼 이미지 */
+        .button_area {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* 가위 버튼 */
+        #scissors {
+            font-size: 30px;
+            font-weight: bold;
+            border-radius: 10px;
+            width: 150px;
+            height: 100px;
+            margin: 10px;
+            background-color: red;
+            color: black;
+        }
+
+        /* 바위버튼 */
+        #rock {
+            font-size: 30px;
+            font-weight: bold;
+            border-radius: 10px;
+            width: 150px;
+            height: 100px;
+            margin: 10px;
+            background-color: green;
+            color: black;
+        }
+
+        /* 보 버튼 */
+        #paper {
+            font-size: 30px;
+            font-weight: bold;
+            border-radius: 10px;
+            width: 150px;
+            height: 100px;
+            margin: 10px;
+            background-color: blue;
+            color: black;
+        }
+
+        /* 컴퓨터 결과 이미지 */
+        .computer {
+            width: 190px;
+            height: 280px;
+            background: url('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbWw5ZI%2Fbtr97poHgiI%2FkAb5MSKujzs0i1y7imqQy0%2Fimg.jpg') 0 0;
+            display: inline-block;
+        }
+
+        /* 내 결과 이미지 */
+        .user {
+            width: 190px;
+            height: 280px;
+            background: url('https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbWw5ZI%2Fbtr97poHgiI%2FkAb5MSKujzs0i1y7imqQy0%2Fimg.jpg') 0 0;
+            display: inline-block;
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 네브바 -->
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="{{ url_for('home')}}">메인으로</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/record">기록 보기</a>
+        </li>
+    </ul>
+
+    <!-- 결과표 제목 -->
+    <h1 class="title">
+        <span>결과표</span>
+        <span>{{data['user_id']}}님의 결과 입니다.</span>
+    </h1>
+
+    <!-- 가위바위보 출력 이미지-->
+    <div class="image_area">
+        <div class=text><img class="user"><br>당신의 선택</div>
+        <div class=text><img class="computer"><br>컴퓨터의 선택</div>
+    </div>
+
+    <!-- 승률표 -->
+    {% if data %}
+    <div id="result" style="margin: 50px 0; text-align: center;">
+        <p>플레이 횟수 {{data['playtime']}}게임</p>
+        <p> {{data['win']}}승 {{data['lose']}}패 {{data['draw']}} 무</p>
+    </div>
+    {% endif %}
+
+
+    <!-- 묵찌빠 버튼 -->
+    <form action="{{ url_for('game')}}" method="post">
+        <input type="hidden" name="user_id" value="{{ data['user_id'] }}">
+        <div class="button_area">
+            <input type="submit" id="scissors" name="user" value='가위'>
+            <input type="submit" id="rock" name="user" value='바위'>
+            <input type="submit" id="paper" name="user" value='보'>
+        </div>
+    </form>
+
+
+
+
+    <!-- 부트 스트랩 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+<script>
+    // 내가 누를 버튼 값 가져와서 값 가져와서 변수화
+    var userimage = "{{ data['my_num'] }}"
+    var computerimage = "{{ data['computer_num'] }}"
+    // 각 변수에 맞추어 이미지 위치 잡아주기
+    imageplace_user = userimage === '1' ? '-190px' : (userimage === '0' ? '0' : '-390px');  // 내가 누른 버튼에 해당하는 값을 좌표값을 저장 가위면 -190px 바위면 0px 보면 -390px
+    const UserImages = document.querySelectorAll(".user"); // user 이미지의 모든 요소 가져오기
+    UserImages.forEach(function (UserImages) {
+        UserImages.style.background =  // 설정 이미지 가져와서 반영하기
+            'url(https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbWw5ZI%2Fbtr97poHgiI%2FkAb5MSKujzs0i1y7imqQy0%2Fimg.jpg) ' + imageplace_user + ' 0';
+    })
+
+    imageplace_computer = computerimage === '1' ? '-190px' : (computerimage === '0' ? '0' : '-390px');  // 내가 누른 버튼에 해당하는 값을 좌표값을 저장 가위면 -190px 바위면 0px 보면 -390px
+    const ComImages = document.querySelectorAll(".computer"); // user 이미지의 모든 요소 가져오기
+    ComImages.forEach(function (ComImages) {
+        ComImages.style.background =  // 설정 이미지 가져와서 반영하기
+            'url(https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbWw5ZI%2Fbtr97poHgiI%2FkAb5MSKujzs0i1y7imqQy0%2Fimg.jpg) ' + imageplace_computer + ' 0';
+    })
+</script>

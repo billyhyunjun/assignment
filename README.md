@@ -11,8 +11,8 @@
 
 1. Up Down 게임 만들기!
 
-   파일명 : up_down_game.py
-   프로그램 : python
+   파일명 : up_down_game.py /
+   프로그램 : python /
    실행 방법 : 터미널 창 python up_down_game.py 입력 또는 파이썬 실행하기
 
    처음 시작을 하게 되면 터미널 창에 아래와 같이 표기가 됩니다.
@@ -48,8 +48,8 @@
 
 2. 가위 바위 보 게임 만들기!
 
-   파일명 : rock_scissors_paper.py
-   프로그램 : python
+   파일명 : rock_scissors_paper.py /
+   프로그램 : python /
    실행 방법 : 터미널 창 python rock_scissors_paper.py 입력 또는 파이썬 실행하기
 
    가위 바위 보 게임을 실행하면 아래와 같은 그림과 개임 시작을 알리는 메세지가 나옵니다.
@@ -116,10 +116,10 @@
                         [1승 0패 3무]
 
    
-4. (심화 과제) 클래스 사용해보기!
+3. (심화 과제) 클래스 사용해보기!
 
-   파일명 : member_post.py
-   프로그램 : python
+   파일명 : member_post.py /
+   프로그램 : python /
    실행 방법 : 터미널 창 python member_post.py 입력 또는 파이썬 실행하기
 
   멤버 포스트 클레스는 아이디를 만들어 등록하고 조회하기 및 등록된 이름으로 게시글을 만들고 게시글을 조회하는 기능을 넣었습니다.
@@ -193,8 +193,8 @@
   
 4. (심화 과제) 가위 바위 보 게임 웹으로 만들기!
 
-   파일명 : app.py
-   프로그램 : python, html
+   파일명 : app.py /
+   프로그램 : python, html /
    실행 방법 : 터미널 창 python app.py 입력 또는 파이썬 실행하기
 
   이번 과제의 심화 내용으로 html과 Flask를 이용 웹으로 구동이 되는 게임을 만들어 보았습니다.

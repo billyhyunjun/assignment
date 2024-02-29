@@ -195,10 +195,31 @@
 
   이번 과제의 심화 내용으로 html과 Flask를 이용 웹으로 구동이 되는 게임을 만들어 보았습니다.
 
-  https://billyhyunjun.pythonanywhere.com/
 
   실제로 이 글을 읽는 분들도 체험이 가능하도록 pythonanywhere라는 가상 환경을 구성해주는 사이트의 도움으로 파이썬을 구동 할 수 있습니다.
   만들어진 자료는 아래의 사이트에서 체험이 가능합니다.
+
+  https://billyhyunjun.pythonanywhere.com/
+
+  게임 시작 버튼을 누르면 아래와 같이 로그인 창이 뜨며 아이디를 입력하고 들어갈 수 있습니다.
+
+  ![image](https://github.com/billyhyunjun/assignment/assets/157565164/806139ba-200e-46fa-964a-e1ce84f7e43b)
+
+  아이디의 전적은 데이터 서버에 기록이 되며 동일한 이름의 아이디로 접속을 하면 이어서 플레이를 할 수 있습니다.
+
+  ![image](https://github.com/billyhyunjun/assignment/assets/157565164/528923a7-d1be-4e75-8501-bfcc486f72e7)
+
+  플레이는 가위 바위 보 버튼을 눌러서 컴퓨터와 승부를 할 수 있으며 플레이 횟수 및 승 패 무의 결과를 볼 수 있습니다.
+  그리고 상단의 기록 보기 탭을 눌러 지금 것 게임을 했던 사람들의 기록 및 승률에 의한 순위도 볼수 있습니다.
+
+  ![image](https://github.com/billyhyunjun/assignment/assets/157565164/ec45005c-a9ff-416d-810c-0ce4b2e19ab8)
+
+  그리고 깨알 적인 요소로 아래의 이미지를 누르면 노래가 나옵니다 ㅎㅎ
+
+  ![image](https://github.com/billyhyunjun/assignment/assets/157565164/02d0d87d-db82-4377-8205-ef42d03debf2)
+  ![image](https://github.com/billyhyunjun/assignment/assets/157565164/0e2ba65a-3706-4709-a973-e7ab52b64443)
+
+
   
   
    

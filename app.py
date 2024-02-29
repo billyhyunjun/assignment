@@ -107,8 +107,8 @@ def record():
 
     for i in rows_as_lists:
         try:
-            # 아이디 : {{data.0}} | 승률 : {{data.5}} | {{data.1}} 전 | {{data.2}} 승  | {{data.3}} 패 | {{data.4}} 무
-            win_per = round((i[2] / (i[1] - i[4])) * 100, 2)
+            # 아이디 : {{data.0}} | 승률 : {{data.5}} | {{data.1}} 전 | {{data.2}} 무  | {{data.3}} 승 | {{data.4}} 패
+            win_per = round((i[3] / (i[1] - i[2])) * 100, 2)
         except ZeroDivisionError:
             win_per = 0
 

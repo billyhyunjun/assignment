@@ -199,9 +199,10 @@
 
   이번 과제의 심화 내용으로 html과 Flask를 이용 웹으로 구동이 되는 게임을 만들어 보았습니다.
 
+  https://billyhyunjun.pythonanywhere.com/
+
   실제로 이 글을 읽는 분들도 체험이 가능하도록 pythonanywhere라는 가상 환경을 구성해주는 사이트의 도움으로 파이썬을 구동 할 수 있습니다.
   만들어진 자료는 아래의 사이트에서 체험이 가능합니다.
   
-  https://billyhyunjun.pythoㅎ
   
    

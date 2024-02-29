@@ -103,10 +103,14 @@ def record():
     rows_as_lists = [list(row) for row in rows]
     con.close()
 
-    print(rows_as_lists)
+    print(f"{rows_as_lists=}")
 
     for i in rows_as_lists:
-        win_per = round(i[3] / (i[1] - i[2]) * 100,2)
+        try:
+            win_per = round((i[3] / (i[1] - i[2])) * 100, 2)
+        except ZeroDivisionError:
+            win_per = 0
+
         i.append(win_per)
 
     print(rows_as_lists)
@@ -114,7 +118,7 @@ def record():
     sorted_data = sorted(rows_as_lists, key=lambda x: x[5], reverse=True)
 
     print(sorted_data)
-    return render_template("record.html", data = sorted_data)
+    return render_template("record.html", data=sorted_data)
 
 
 @app.route('/game', methods=['POST', 'GET'])
